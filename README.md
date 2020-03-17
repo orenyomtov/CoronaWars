@@ -1,1 +1,1 @@
-# DopeWars
+# CoronaWars
