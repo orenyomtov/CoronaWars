@@ -146,7 +146,7 @@
 
                     <div class="drug-content row" ng-class="{'content-open':drug.selected}">
 
-                        <p class="col-xs-12">Average street price <b>{{drugStreetPrice(drug)|money}}</b> per gram</p>
+                        <p class="col-xs-12">Average price <b>{{drugStreetPrice(drug)|money}}</b></p>
 
                         <div class="mb-10" ng-show="gameModel.silkRoadUnlocked && !gameModel.autoSilk">
                             <div class="col-xs-12 btn-group">
@@ -155,7 +155,7 @@
                                     <span class="glyphicon icongreen glyphicon-info-sign" style="width:100%;"></span>
                                 </button>
                             </div>
-                            <div style="display:none;" class="col-xs-12"><p class="jg-tooltip">Sell 1kg of {{drug.name}} on the silk road for 90% of the current street price</p></div>
+                            <div style="display:none;" class="col-xs-12"><p class="jg-tooltip">Sell 1000 {{drug.name}} on the silk road for 90% of the current price</p></div>
                             <div class="clearfix"></div>
                         </div>
                         
@@ -211,15 +211,15 @@
                 </div>
 				
 				<div class="btn-group" style="width:100%;">
-					<button ng-click="hireDealerModal()" style="width:85%;" class="btn btn-default" type="button" id="hire-dealer-button" tooltip="Hire another dealer">
-                    	<span class="glyphicon icongreen glyphicon-user"></span> Hire dealer <span class="dealer-count strong">{{gameModel.dealers.length + '/' + (1 + gameModel.territoryUpgrades)}}</span>
+					<button ng-click="hireDealerModal()" style="width:85%;" class="btn btn-default" type="button" id="hire-dealer-button" tooltip="Hire another salesperson">
+                    	<span class="glyphicon icongreen glyphicon-user"></span> Hire salesperson <span class="dealer-count strong">{{gameModel.dealers.length + '/' + (1 + gameModel.territoryUpgrades)}}</span>
                 	</button>
 					<button type="button" class="btn btn-default dropdown-toggle text-center pl-0 pr-0" data-toggle="dropdown" aria-expanded="false" style="width:15%;">
 						<span class="icongreen noadjust glyphicon glyphicon-sort-by-alphabet"></span><span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu" style="right:0;left:auto;">
 						<li><a href="#" ng-click="dealerSort = 'none';dealerSortReverse = false;">None <span class="glyphicon glyphicon-ok" ng-show="dealerSort == 'none'"></span></a></li>
-						<li><a href="#" ng-click="dealerSort = 'drugIndex';dealerSortReverse = false;updateDealerDrugIndex();">Drug <span class="glyphicon glyphicon-ok" ng-show="dealerSort == 'drugIndex'"></span></a></li>
+						<li><a href="#" ng-click="dealerSort = 'drugIndex';dealerSortReverse = false;updateDealerDrugIndex();">Product <span class="glyphicon glyphicon-ok" ng-show="dealerSort == 'drugIndex'"></span></a></li>
 						<li><a href="#" ng-click="dealerSort = 'name';dealerSortReverse = false;">Name <span class="glyphicon glyphicon-ok" ng-show="dealerSort == 'name'"></span></a></li>
 						<li><a href="#" ng-click="dealerSort = 'cashEarned';dealerSortReverse = true;">Cash Earned <span class="glyphicon glyphicon-ok" ng-show="dealerSort == 'cashEarned'"></span></a></li>
 						<li><a href="#" ng-click="dealerSort = 'originalVolume';dealerSortReverse = true;">Volume <span class="glyphicon glyphicon-ok" ng-show="dealerSort == 'originalVolume'"></span></a></li>
@@ -235,7 +235,7 @@
 	                    <div class="dealer-content row" ng-class="{'content-open':dealer.selected}">
 						
 						<div class="alert alert-danger ml-10 mr-10 mb-10 text-center" role="alert" ng-show="dealer.arrested">ARRESTED</div>
-						<span class="col-xs-12 mb-5" ng-show="dealer.arrested"><button class="btn btn-default" ng-click="payBail(dealer)" ng-disabled="gameModel.cash < dealer.bail"><span class="glyphicon glyphicon-usd icongreen"></span>Pay Bail <b>{{dealer.bail | money}}</b></button></span>
+						<span class="col-xs-12 mb-5" ng-show="dealer.arrested"><button class="btn btn-default" ng-click="payBail(dealer)" ng-disabled="gameModel.cash < dealer.bail"><span class="glyphicon glyphicon-usd icongreen"></span>Pay Medical Bills <b>{{dealer.bail | money}}</b></button></span>
 						
                         <p class="col-xs-6" style="padding-left:21px;padding-right:0;">Total: <strong>{{dealer.cashEarned|money}}</strong></p>
 						
@@ -275,17 +275,17 @@
             </div>
 
             <div class="col-xs-12 col-sm-4 muscle col-pad-5">
-                <h3 class="strong muscle-header">Muscle</h3>
+                <h3 class="strong muscle-header">Real Estate</h3>
 				
 				<div class="btn-group" role="group" style="width:100%;">
 					<button ng-click="expandTerritory()" style="width:85%;" class="btn btn-default btn-muscle" ng-disabled="gameModel.cash < priceOfTerritory()" type="button">
-	                    <span class="glyphicon icongreen glyphicon-globe"></span> Expand territory (<strong>{{priceOfTerritory()|money}}</strong>)
+	                    <span class="glyphicon icongreen glyphicon-globe"></span> Buy real estate (<strong>{{priceOfTerritory()|money}}</strong>)
     	            </button>
 					<button class="btn btn-default btn-muscle text-center pl-0 pr-0" style="width:15%;" onclick="toggleTooltip(this);">
 						<span class="glyphicon icongreen glyphicon-info-sign" style="width:100%;"></span>
 					</button>
 				</div>
-				<div style="display:none;"><p class="jg-tooltip">Expand your territory, allowing you to hire an additional dealer</p></div>
+				<div style="display:none;"><p class="jg-tooltip">Buy real estate, allowing you to hire an additional salesperson</p></div>
            		<progressbar animate="false" value="cashPercentage(priceOfTerritory())" ng-class="gameModel.cash < priceOfTerritory() ? 'active progress-striped' : 'progress-bar-success'"></progressbar>
             </div>
 		</div>
@@ -296,10 +296,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Recruit a dealer captain</h4>
+                    <h4 class="modal-title" id="myModalLabel">Recruit a natural salesperson</h4>
                 </div>
                 <div class="modal-body row">
-					<div class="col-xs-12 pb-10"><p>Recruit a dealer captain for {{prestigeDealerPrice | money}}</p><p class="strong">This will reset your current game progress but give you access to a captain dealer with perfect attributes and persistant upgrades.</p></div>
+					<div class="col-xs-12 pb-10"><p>Recruit a natural salesperson for {{prestigeDealerPrice | money}}</p><p class="strong">This will reset your current game progress but give you access to a natural salesperson with perfect attributes and persistant upgrades.</p></div>
 					<div class="col-xs-12">
 						<div class="input-group">
 							<span class="input-group-addon">Dealer name</span>
@@ -373,18 +373,18 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Hire dealer</h4>
+                    <h4 class="modal-title" id="myModalLabel">Hire salesperson</h4>
                 </div>
                 <div class="modal-body row">
-                    <div class="col-xs-12 col-sm-4"><button class="btn btn-default btn-distribution new-dealer-btn" ng-click="refreshDealers()" ng-disabled="secondsToDealerRefresh > 0">New dealers <span ng-show="secondsToDealerRefresh > 0">({{secondsToDealerRefresh}})</span></button></div>
-                    <p class="col-xs-12 col-sm-8 dealer-warning" ng-show="gameModel.dealers.length >= gameModel.territoryUpgrades + 1">You already have the maximum number of dealers working for you. Either fire a dealer or expand your territory to hire another.</p>
+                    <div class="col-xs-12 col-sm-4"><button class="btn btn-default btn-distribution new-dealer-btn" ng-click="refreshDealers()" ng-disabled="secondsToDealerRefresh > 0">New salespeople <span ng-show="secondsToDealerRefresh > 0">({{secondsToDealerRefresh}})</span></button></div>
+                    <p class="col-xs-12 col-sm-8 dealer-warning" ng-show="gameModel.dealers.length >= gameModel.territoryUpgrades + 1">You already have the maximum number of salespeople working for you. Either fire a salesperson or by real estate to hire another.</p>
                     <div class="clearfix"></div>
                     <div class="col-xs-12 col-sm-4 dealer-hire-anim" ng-repeat="dealer in hireDealers track by $index" ng-animate="'list'">
                         <p class="dealer-name"><span class="glyphicon glyphicon-tower" ng-show="dealer.type == 'Prestige'"></span> <span class="distribution strong">{{dealer.name}}</span></p>
                         <p class="strong">Volume: <span class="volume iconyellow" ng-bind-html="getStars(dealer.originalVolume,5)"></span></p>
                         <p class="strong">Margin: <span class="price iconyellow" ng-bind-html="getStars(dealer.originalPrice,5)"></span></p>
-						<p>Sells {{actualDealerVolume(dealer,dealer.drug)|weight}} per second</p>
-						<p>Sells 1g of {{dealer.drug}} for {{actualDealerPrice(dealer)|money}}</p>
+						<p>Sells {{actualDealerVolume(dealer,dealer.drug)}} per second</p>
+						<p>Sells 1 {{dealer.drug}} for {{actualDealerPrice(dealer)|money}}</p>
                         <button class="btn btn-default btn-distribution" ng-click="hireDealer(dealer)" ng-disabled="gameModel.dealers.length >= gameModel.territoryUpgrades + 1 || dealerHired(dealer.seed)">{{dealerHired(dealer.seed) ? 'Hired' : 'Hire ' + dealer.name.split(' ')[0]}}</button>
                     </div>
                 </div>
@@ -409,7 +409,7 @@
                     <div class="col-xs-12 col-sm-6">
                         <button class="btn btn-default" onclick="$('div.advert').hide();"><span class="glyphicon glyphicon-filter iconred"></span> Hide ads</button>
                     </div>
-                    <div class="col-xs-12 col-sm-6" ng-show="gameModel.silkRoadUnlocked" tooltip="Toggle automatic selling of drugs on the silk road">
+                    <div class="col-xs-12 col-sm-6" ng-show="gameModel.silkRoadUnlocked" tooltip="Toggle automatic selling of items on the silk road">
                         <button ng-click="toggleAutoSilk()" class="btn btn-default"><span class="glyphicon glyphicon-cloud icongreen"></span> Auto silk road sell {{gameModel.autoSilk ? '(on)' : '(off)'}}</button>
                     </div>
                 </div>

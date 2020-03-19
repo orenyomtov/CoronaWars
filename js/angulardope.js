@@ -32,19 +32,19 @@ function DealerUpgrade(name, tooltip, price, volumeMod, priceMod, secondaryMod, 
 }
 
 var dealerUpgrades = [
-    new DealerUpgrade('Baseball bat', 'Handy in a street fight and helps to scare away the competition. Allows the dealer to sell drugs for 10% more money', 150, 1, 1.1, 0, '+10% margin'),
-    new DealerUpgrade('Bicycle', 'The cheapest and most basic form of personal transportation. Allows the dealer to sell an extra 10% volume', 600, 1.1, 1, 0, '+10% volume'),
-    new DealerUpgrade('iPhone 6 Plus', 'A state of the art smartphone. Allows the dealer to sell a small amount of other drugs on the side', 900, 1, 1, 0.1, '+10% secondary sales'),
-    new DealerUpgrade('Superbike', 'One of the fastest ways to get around the urban jungle. Allows the dealer to sell an extra 20% volume', 25000, 1.2, 1, 0, '+20% volume'),
-    new DealerUpgrade('Glock 17 9mm', 'A small but deadly firearm, nobody will mess with you if you have this. Allows the dealer to sell drugs for 20% more money', 5000, 1, 1.2, 0, '+20% margin'),
-    new DealerUpgrade('Personal Assistant', 'A personal assistant to take your calls. Allows the dealer to sell even more drugs on the side', 85000, 1, 1, 0.2, '+20% secondary sales'),
-    new DealerUpgrade('Armed Gang', 'A gang of tooled up homies to help eliminate the competition. Allows the dealer to sell drugs for 20% more money', 150000, 1, 1.2, 0, '+20% margin'),
-    new DealerUpgrade('Ferrari 458 Italia', 'A fine Italian supercar. Allows the dealer to sell an extra 30% volume', 575000, 1.3, 1, 0, '+30% volume'),
-    new DealerUpgrade('AW119 Ke Koala', 'A personal helicopter for transporting you and your homies! Allows the dealer to sell an extra 60% volume', 1890000, 1.6, 1, 0, '+60% volume')
+    new DealerUpgrade('Baseball bat', 'Handy in a street fight and helps to scare away the competition. Allows the salesperson to sell items for 10% more money', 150, 1, 1.1, 0, '+10% margin'),
+    new DealerUpgrade('Bicycle', 'The cheapest and most basic form of personal transportation. Allows the salesperson to sell an extra 10% volume', 600, 1.1, 1, 0, '+10% volume'),
+    new DealerUpgrade('iPhone 11 Pro', 'A state of the art smartphone. Allows the salesperson to sell a small amount of other items on the side', 900, 1, 1, 0.1, '+10% secondary sales'),
+    new DealerUpgrade('Superbike', 'One of the fastest ways to get around the urban jungle. Allows the salesperson to sell an extra 20% volume', 25000, 1.2, 1, 0, '+20% volume'),
+    new DealerUpgrade('Propaganda Agency', 'A small but deadly russian agency, spreads misinformation and fear across the internet. Allows the salesperson to sell items for 20% more money', 5000, 1, 1.2, 0, '+20% margin'),
+    new DealerUpgrade('Personal Assistant', 'A personal assistant to take your calls. Allows the salesperson to sell even more items on the side', 85000, 1, 1, 0.2, '+20% secondary sales'),
+    new DealerUpgrade('Hacker', 'A hacker who eliminates the competitios\'s critical infrastructure. Allows the salesperson to sell items for 20% more money', 150000, 1, 1.2, 0, '+20% margin'),
+    new DealerUpgrade('Ferrari 458 Italia', 'A fine Italian supercar. Allows the salesperson to sell an extra 30% volume', 575000, 1.3, 1, 0, '+30% volume'),
+    new DealerUpgrade('AW119 Ke Koala', 'A personal helicopter for transporting you around town! Allows the salesperson to sell an extra 60% volume', 1890000, 1.6, 1, 0, '+60% volume')
 ];
 
-var silkRoadUpgrade = {type:'SilkRoad',name:'Develop Silk Road',tooltip:'Develop the Silk Road dark web site to allow you to bulk sell drugs in units of 1kg',price:141592,glyph:'glyphicon-cloud'};
-var prestigeDealerUpgrade = {type:'PrestigeDealer',name:'Dealer Captain',tooltip:'Recruit a dealer captain with perfect attributes. This will reset your progress!',price:5000000,glyph:'glyphicon-tower'};
+var silkRoadUpgrade = {type:'SilkRoad',name:'Develop Silk Road',tooltip:'Develop the Silk Road dark web site to allow you to your items in bulk lots of 1000 pieces',price:141592,glyph:'glyphicon-cloud'};
+var prestigeDealerUpgrade = {type:'PrestigeDealer',name:'Natural Salesperson',tooltip:'Recruit a natural salesperson with perfect attributes. This will reset your progress!',price:5000000,glyph:'glyphicon-tower'};
 
 function ProductionUpgrade(name, tooltip, price, producer, upVal, drug) {
     this.type = 'ProductionUpgrade';
@@ -81,36 +81,36 @@ function formatMoney(input) {
 }
 
 var productionUpgradesMaster = [
-    new ProductionUpgrade('Fertilizer', 'Nutrient rich fertilizer, increases the amount of weed produced by your cannabis plants by 30%!', 500, 'Cannabis Seed', 1.3, 'Weed'),
-    new ProductionUpgrade('Hydroponics', 'High tech agriculture system, increases the amount of weed produced by your cannabis plants by 50%!', 6500, 'Cannabis Seed', 1.5, 'Weed'),
+    new ProductionUpgrade('Aloe Vera', 'Dillute alcogel with cheap and ineffective aloe vera, increases the amount of alcogel produced by your factories by 30%!', 500, 'Algogel Factory', 1.3, 'Alcogel'),
+    new ProductionUpgrade('Move to China', 'High tech industrial systems, and low wages. Increases the amount of alcogel produced by your factories by 50%!', 6500, 'Algogel Factory', 1.5, 'Alcogel'),
 
-    new ProductionUpgrade('Auto Hygrometer', 'An automatically controlled humidity system, increases the amount of shrooms produced by your mushroom farms by 50%!', 5000, 'Mushroom Farm', 1.5, 'Magic Mushrooms'),
-    new ProductionUpgrade('Irrigation system', 'An computer controlled irrigation system, increases the amount of shrooms produced by your mushroom farms by 50%!', 25000, 'Mushroom Farm', 1.5, 'Magic Mushrooms'),
+    new ProductionUpgrade('Auto Hygrometer', 'An automatically controlled humidity system, increases the amount of toilet paper produced by your factories by 50%!', 5000, 'Toilet Paper Mill', 1.5, 'Toilet Paper'),
+    new ProductionUpgrade('Rolling system', 'An computer controlled rolling system, increases the amount of toilet paper rolls produced by your factories by 50%!', 25000, 'Toilet Paper Mill', 1.5, 'Toilet Paper'),
 
-    new ProductionUpgrade('Recreational Vehicle', 'Increases the amount of meth made by your cooks by 50%!', 40000, 'Meth Cook', 1.5, 'Meth'),
-    new ProductionUpgrade('Underground Lab', 'Increases the amount of meth made by your cooks by 50%!', 130000, 'Meth Cook', 1.5, 'Meth'),
+    new ProductionUpgrade('Recycled Ingredients', 'Increases the amount of face masks made by your factories by 50%!', 40000, 'Face Mask Factory', 1.5, 'Face Mask'),
+    new ProductionUpgrade('Lower Fiber Density', 'Increases the amount of face masks made by your factories by 50%!', 130000, 'Face Mask Factory', 1.5, 'Face Mask'),
 
-    new ProductionUpgrade('Corrupt Chemist', 'Increases the amount of speed produced by your chefs by 60%!', 75000, 'Base Chef', 1.4, 'Speed'),
-    new ProductionUpgrade('Criminal Pharmacy', 'Increases the amount of speed produced by your chefs by 50%!', 190000, 'Base Chef', 1.5, 'Speed'),
+    new ProductionUpgrade('Lower Wages', 'Increases the amount of N95 respirators produced by your factories by 60%!', 75000, 'N95 Factory', 1.4, 'N95 Respirator'),
+    new ProductionUpgrade('Implement ERP System', 'Increases the amount of N95 respirators produced by your factories by 50%!', 190000, 'N95 Factory', 1.5, 'N95 Respirator'),
 
-    new ProductionUpgrade('College education', 'Increases the amount of acid made by your lab technicians by 50%!', 80000, 'Lab Technician', 1.5, 'Acid'),
-    new ProductionUpgrade('Digital Distillation', 'Increases the amount of acid made by your lab technicians by 50%!', 120000, 'Lab Technician', 1.5, 'Acid'),
+    new ProductionUpgrade('Nitrile Rubber', 'Increases the amount of gloves made by your factories by 50%!', 80000, 'Gloves Factory', 1.5, 'Sterile Gloves'),
+    new ProductionUpgrade('Polyvinyl Chloride', 'Increases the amount of gloves made by your factories by 50%!', 120000, 'Gloves Factory', 1.5, 'Sterile Gloves'),
 
-    new ProductionUpgrade('Gang protection', 'Increases the amount of crack made by your crack dens by 50%!', 145000, 'Crack Den', 1.5, 'Crack'),
-    new ProductionUpgrade('Police Payoff', 'Get the feds off your back to increase the amount of crack made by your crack dens by 45%!', 280000, 'Crack Den', 1.45, 'Crack'),
+    new ProductionUpgrade('Hire Wartime CEO', 'Increases the amount of suits made by your factories by 50%!', 145000, 'Suit Factory', 1.5, 'Biohazard Suit'),
+    new ProductionUpgrade('FDA Payoff', 'Get the feds off your back to increase the amount of suits made by your factories by 45%!', 280000, 'Suit Factory', 1.45, 'Biohazard Suit'),
 
-    new ProductionUpgrade('Haber process research', 'Increases the amount of PCP made by your chemical labs by 50%!', 190000, 'Chemical Lab', 1.5, 'PCP'),
-    new ProductionUpgrade('Mass Spectrometer', 'Increases the amount of PCP made by your chemical labs by 70%!', 550000, 'Chemical Lab', 1.7, 'PCP'),
+    new ProductionUpgrade('Chemical Research', 'Increases the amount of testing kits made by your testing labs by 50%!', 190000, 'Testing Lab', 1.5, 'Testing Kit'),
+    new ProductionUpgrade('Mass Spectrometer', 'Increases the amount of testing kits made by your testing labs by 70%!', 550000, 'Testing Lab', 1.7, 'Testing Kit'),
 
-    new ProductionUpgrade('Polytunnel complex', 'Increases the amount of heroin made by your opium farms by 50%!', 210000, 'Opium Farm', 1.5, 'Heroin'),
-    new ProductionUpgrade('Cropdusting', 'Increases the amount of heroin made by your opium farms by 50%!', 750000, 'Opium Farm', 1.5, 'Heroin'),
+    new ProductionUpgrade('Humidification Equipment', 'Increases the amount of ventilators made by your factories by 50%!', 210000, 'Ventilator Factory', 1.5, 'Ventilator'),
+    new ProductionUpgrade('Gas Blender', 'Increases the amount of ventilators made by your factories by 50%!', 750000, 'Ventilator Factory', 1.5, 'Ventilator'),
 
-    new ProductionUpgrade('PhD Students', 'A small army of PhD students to assist the professors in their important work. Increases the amount of MDMA made by your chemistry professors by 60%!', 250000, 'Chemistry Professor', 1.6, 'MDMA'),
-    new ProductionUpgrade('Research Facility', 'Increases the amount of MDMA made by your chemistry professors by 40%!', 1000000, 'Chemistry Professor', 1.4, 'MDMA'),
+    new ProductionUpgrade('Recycled Pulp', 'Increases the amount of wet wipes made by your factories by 60%!', 250000, 'Wet Wipes Factory', 1.6, 'Wet Wipes'),
+    new ProductionUpgrade('Advanced Fiber', 'Increases the amount of wet wipes made by your factories by 40%!', 1000000, 'Wet Wipes Factory', 1.4, 'Wet Wipes'),
 
-    new ProductionUpgrade('Plastic surgery disguise', 'Increases the amount of cocaine smuggled by your drug mules by 30%!', 350000, 'Drug Mule', 1.3, 'Cocaine'),
-    new ProductionUpgrade('Cartel deal', 'Broker a deal with a major cartel south of the border. Increases the amount of cocaine smuggled by your drug mules by 80%!', 1500000, 'Drug Mule', 1.8, 'Cocaine'),
-    new ProductionUpgrade('DEA Mole', 'Install a mole within the DEA to help make your operations go more smoothly. Increases the amount of cocaine smuggled by your drug mules by 50%!', 2500000, 'Drug Mule', 1.5, 'Cocaine')];
+    new ProductionUpgrade('Plastic Parts', 'Increases the amount of bidets made by your factories by 30%!', 350000, 'Bidet Factory', 1.3, 'Bidet'),
+    new ProductionUpgrade('Seat Heater', 'Increases the amount of bidets made by your factories by 80%!', 1500000, 'Bidet Factory', 1.8, 'Bidet'),
+    new ProductionUpgrade('Warm Air Dryer', 'Increases the amount of bidets made by your factories by 50%!', 2500000, 'Bidet Factory', 1.5, 'Bidet')];
 
 function Drug(name, pricePerGram, costToUnlock) {
     this.name = name;
@@ -120,21 +120,21 @@ function Drug(name, pricePerGram, costToUnlock) {
     this.selected = true;
     this.costToUnlock = costToUnlock;
     this.totalCash = 0;
-	this.drugUnlock = new DrugUnlock('Research ' + this.name, 'Spend money to research production of a new drug, ' + this.name + '. Your customers will love it!', this.costToUnlock, this.name);
+	this.drugUnlock = new DrugUnlock('Research ' + this.name, 'Spend money to research production of a new item, ' + this.name + '. Your customers will love it!', this.costToUnlock, this.name);
 }
 
 var drugsMaster = [
-    new Drug('Weed', 4.2, 0),
-    new Drug('Magic Mushrooms', 6, 2000),
-    new Drug('Meth', 10, 7000),
-    new Drug('Speed', 15, 20000),
-    new Drug('Acid', 20, 40000),
-    new Drug('Crack', 30, 75000),
-    new Drug('PCP', 40, 90000),
-    new Drug('Heroin', 50, 120000),
-    new Drug('MDMA', 60, 180000),
-    new Drug('Cocaine', 70, 250000)];
-
+    new Drug('Alcogel', 4.4, 0),
+    new Drug('Toilet Paper', 6, 2000),
+    new Drug('Face Mask', 10, 7000),
+    new Drug('N95 Respirator', 15, 20000),
+    new Drug('Sterile Gloves', 20, 40000),
+    new Drug('Biohazard Suit', 30, 75000),
+    new Drug('Testing Kit', 40, 90000),
+    new Drug('Ventilator', 50, 120000),
+    new Drug('Wet Wipes', 60, 180000),
+    new Drug('Bidet', 70, 250000)];
+    
 function Producer(name, basePrice, drug, priceMulti, prodPerUnit) {
     this.name = name;
     this.basePrice = basePrice;
@@ -145,16 +145,16 @@ function Producer(name, basePrice, drug, priceMulti, prodPerUnit) {
 }
 
 var productionMaster = [
-    new Producer('Cannabis Seed', 15, 'Weed', 1.12, 0.2),
-    new Producer('Mushroom Farm', 150, 'Magic Mushrooms', 1.15, 0.3),
-    new Producer('Meth Cook', 1000, 'Meth', 1.2, 0.5),
-    new Producer('Base Chef', 2500, 'Speed', 1.21, 0.4),
-    new Producer('Lab Technician', 5000, 'Acid', 1.22, 0.5),
-    new Producer('Crack Den', 10000, 'Crack', 1.23, 0.5),
-    new Producer('Chemical Lab', 20000, 'PCP', 1.24, 0.4),
-    new Producer('Opium Farm', 30000, 'Heroin', 1.25, 0.5),
-    new Producer('Chemistry Professor', 40000, 'MDMA', 1.26, 0.45),
-    new Producer('Drug Mule', 50000, 'Cocaine', 1.27, 0.3)];
+    new Producer('Algogel Factory', 15, 'Alcogel', 1.12, 0.2),
+    new Producer('Toilet Paper Mill', 150, 'Toilet Paper', 1.15, 0.3),
+    new Producer('Face Mask Factory', 1000, 'Face Mask', 1.2, 0.5),
+    new Producer('N95 Factory', 2500, 'N95 Respirator', 1.21, 0.4),
+    new Producer('Gloves Factory', 5000, 'Sterile Gloves', 1.22, 0.5),
+    new Producer('Suit Factory', 10000, 'Biohazard Suit', 1.23, 0.5),
+    new Producer('Testing Lab', 20000, 'Testing Kit', 1.24, 0.4),
+    new Producer('Ventilator Factory', 30000, 'Ventilator', 1.25, 0.5),
+    new Producer('Wet Wipes Factory', 40000, 'Wet Wipes', 1.26, 0.45),
+    new Producer('Bidet Factory', 50000, 'Bidet', 1.27, 0.3)];
 
 
 function Dealer(seed) {
@@ -180,7 +180,7 @@ function Dealer(seed) {
     this.name = this.name + ' ' + lastNames[Math.floor(Math.random() * lastNames.length)];
     this.cashEarned = 0;
     this.selected = true;
-    this.drug = "Weed";
+    this.drug = "Alcogel";
 	this.drugIndex = 0;
     this.upgrades = [];
     this.cashOneSecondAgo = 0;
@@ -621,12 +621,12 @@ angular.module('dopewarsremakeApp', ['ngSanitize', 'ngAnimate','jg.progressbar']
         $scope.hireDealer = function (dealer) {
             $('#hireDealerModal').modal('hide');
             if ($scope.gameModel.dealers.length < 1 + $scope.gameModel.territoryUpgrades && !$scope.dealerHired(dealer.seed)) {
-				dealer.drug='Weed';
+				dealer.drug='Alcogel';
                 $scope.gameModel.dealers.push(dealer);
                 writeToCookie();
             } else {
                 $timeout(function () {
-                    $window.alert('You already have the maximum number of dealers working for you. Either fire a dealer or expand your territory to hire another.');
+                    $window.alert('You already have the maximum number of salespeople working for you. Either fire a salesperson or buy additional real estate to hire another.');
                 });
             }
         };
@@ -744,7 +744,7 @@ angular.module('dopewarsremakeApp', ['ngSanitize', 'ngAnimate','jg.progressbar']
 						var bailValue = dealerToArrest.cashPerSecond * 95;
 						dealerToArrest.arrested = true;
 						dealerToArrest.bail = bailValue;
-						dealerToArrest.arrestMessage = dealerToArrest.name + ' has been arrested by the cops! Bail has been set at ' + formatMoney(bailValue) + '.';
+						dealerToArrest.arrestMessage = dealerToArrest.name + ' has caught coronavirus and is sick! The medical bills are ' + formatMoney(bailValue) + '.';
 					}
 				}
                 if (Math.random() > 0.9 && !$scope.gameModel.buff) {
@@ -755,7 +755,7 @@ angular.module('dopewarsremakeApp', ['ngSanitize', 'ngAnimate','jg.progressbar']
 						drugname: buffDrug.name, 
 						modifier: percentage, 
 						expires: new Date().getTime() + (time * 1000), 
-						msg: "One of your rivals has been busted by the cops. The lack of competition is causing " + buffDrug.name + " to sell for " + (percentage * 100).toFixed() + "% of the normal street price for the next {0} seconds!" };						
+						msg: "One of your rivals has been boycotted in social media. The lack of competition is causing " + buffDrug.name + " to sell for " + (percentage * 100).toFixed() + "% of the normal price for the next {0} seconds!" };						
                 }
                 writeToCookie();
                 lastSaved = updateTime;
