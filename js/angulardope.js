@@ -43,7 +43,7 @@ var dealerUpgrades = [
     new DealerUpgrade('AW119 Ke Koala', 'A personal helicopter for transporting you around town! Allows the salesperson to sell an extra 60% volume', 1890000, 1.6, 1, 0, '+60% volume')
 ];
 
-var silkRoadUpgrade = {type:'SilkRoad',name:'Develop Silk Road',tooltip:'Develop the Silk Road dark web site to allow you to your items in bulk lots of 1000 pieces',price:141592,glyph:'glyphicon-cloud'};
+var silkRoadUpgrade = {type:'SilkRoad',name:'Develop Silk Road',tooltip:'Develop the Silk Road dark web site to allow you to sell your items in bulk lots of 1000 pieces',price:141592,glyph:'glyphicon-cloud'};
 var prestigeDealerUpgrade = {type:'PrestigeDealer',name:'Natural Salesperson',tooltip:'Recruit a natural salesperson with perfect attributes. This will reset your progress!',price:5000000,glyph:'glyphicon-tower'};
 
 function ProductionUpgrade(name, tooltip, price, producer, upVal, drug) {
@@ -272,6 +272,7 @@ angular.module('dopewarsremakeApp', ['ngSanitize', 'ngAnimate','jg.progressbar']
     })
     .filter('weight', function () {
         return function (input) {
+            return input.toFixed(2) + ' units';
             if (input >= 1000)
                 return (input / 1000).toFixed(2) + 'kg';
 
