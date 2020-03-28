@@ -269,9 +269,7 @@ div.dealer-content.content-open,
 div.drug-content.content-open {
     display:inherit;
 }
-#cash-wrap {
-	height:80px;
-}
+
 #current-cash {
 	z-index:50;
 	padding-bottom:5px;
