@@ -81,10 +81,10 @@ function formatMoney(input) {
 }
 
 var productionUpgradesMaster = [
-    new ProductionUpgrade('Auto Hygrometer', 'An automatically controlled humidity system, increases the amount of toilet paper produced by your factories by 50%!', 500, 'Toilet Paper Mill', 1.5, 'Toilet Paper'),
+    new ProductionUpgrade('Auto Hygrometer', 'An automatically controlled humidity system, increases the amount of toilet paper produced by your factories by 50%!', 500, 'Toilet Paper Mill', 1.3, 'Toilet Paper'),
     new ProductionUpgrade('Rolling system', 'An computer controlled rolling system, increases the amount of toilet paper rolls produced by your factories by 50%!', 6500, 'Toilet Paper Mill', 1.5, 'Toilet Paper'),
 
-    new ProductionUpgrade('Aloe Vera', 'Dillute the hand sanitizer with cheap and ineffective aloe vera, increases the amount of hand hanitizer produced by your factories by 30%!', 5000, 'Hand Sanitizer Factory', 1.3, 'Hand Sanitizer'),
+    new ProductionUpgrade('Aloe Vera', 'Dillute the hand sanitizer with cheap and ineffective aloe vera, increases the amount of hand hanitizer produced by your factories by 30%!', 5000, 'Hand Sanitizer Factory', 1.5, 'Hand Sanitizer'),
     new ProductionUpgrade('Move to China', 'High tech industrial systems, and low wages. Increases the amount of hand sanitizer produced by your factories by 50%!', 25000, 'Hand Sanitizer Factory', 1.5, 'Hand Sanitizer'),
 
     new ProductionUpgrade('Recycled Ingredients', 'Increases the amount of face masks made by your factories by 50%!', 40000, 'Face Mask Factory', 1.5, 'Face Mask'),
@@ -145,8 +145,8 @@ function Producer(name, basePrice, drug, priceMulti, prodPerUnit) {
 }
 
 var productionMaster = [
-    new Producer('Toilet Paper Mill', 150, 'Toilet Paper', 1.12, 0.2),
-    new Producer('Hand Sanitizer Factory', 15, 'Hand Sanitizer', 1.15, 0.3),
+    new Producer('Toilet Paper Mill', 15, 'Toilet Paper', 1.12, 0.2),
+    new Producer('Hand Sanitizer Factory', 150, 'Hand Sanitizer', 1.15, 0.3),
     new Producer('Face Mask Factory', 1000, 'Face Mask', 1.2, 0.5),
     new Producer('N95 Factory', 2500, 'N95 Respirator', 1.21, 0.4),
     new Producer('Gloves Factory', 5000, 'Sterile Gloves', 1.22, 0.5),
